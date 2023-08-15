@@ -1,0 +1,14 @@
+#!/bin/sh
+set -efu
+
+pys="$(py3versions -s 2> /dev/null)"
+
+
+cp -a tests "$AUTOPKGTEST_TMP"
+cd "$AUTOPKGTEST_TMP"
+
+
+for py in $pys; do
+	echo "=== $py ==="
+	$py -m pytest -k 'not test_extended_syntaxes and not test_html_to_nodes and not test_html_ast and not test_html_round_trip and not test_basic and not test_syntax_elements  and not test_docutils_roles and not test_docutils_directives and not test_syntax_extensions and not test_syntax_elements and not test_tables and not test_directive_options  and not test_sphinx_directives and not test_sphinx_roles and not test_dollarmath and not test_amsmath and not test_containers and not test_evalrst_elements and not test_definition_lists and not test_render and not test_errors and not test_cmdline' --ignore=tests/test_renderers/test_fixtures_sphinx.py --ignore=tests/test_renderers/test_myst_refs.py --ignore=tests/test_sphinx/test_sphinx_builds.py --ignore=tests/test_renderers/test_myst_config.py 2>&1
+done

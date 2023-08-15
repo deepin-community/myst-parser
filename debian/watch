@@ -1,0 +1,3 @@
+version=4
+opts="pgpmode=none, filenamemangle=s%(?:.*?)?v?(\d[\d.]*)\.tar\.gz%@myst-parser@-$1.tar.gz%" \
+https://github.com/executablebooks/MyST-Parser/tags (?:.*?/)?v?(\d[\d.]*)\.tar\.gz

@@ -1,5 +1,110 @@
-template-repository (1.0-1) unstable; urgency=medium
+myst-parser (2.0.0-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream version.
+  * d/rules: ignore tests/test_renderers/test_myst_config.py test. It use
+    pytest_param_files that is not in Debian yet. Ignore the test also in
+    d/tests/unittests.
+  * d/control: Bump Standards-Version to 4.6.2 (from 4.6.1.1; no further
+    changes needed).
+  * d/copyright: Update Copyright year for debian/* files.
+  * d/control: Remove python3-typing-extensions from B-Depends, it's not
+    longer needed.
+    - Also remove it from d/tests/control file.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Emmanuel Arias <eamanu@yaerobi.com>  Mon, 08 May 2023 13:45:23 -0300
+
+myst-parser (0.18.1-2) unstable; urgency=medium
+
+  * Source-only upload.
+
+ -- Emmanuel Arias <eamanu@yaerobi.com>  Sun, 23 Oct 2022 21:10:33 +0000
+
+myst-parser (0.18.1-1) unstable; urgency=medium
+
+  * New upstream version.
+  * d/control: Bump Standards-Version to 4.6.1.1 (from 4.6.1; no further
+    changes).
+  * d/control: Remove python3-pytest-cov as B-Depends, it's not used.
+
+ -- Emmanuel Arias <eamanu@yaerobi.com>  Mon, 03 Oct 2022 12:31:58 -0300
+
+myst-parser (0.18.0-2) unstable; urgency=medium
+
+  * Source-only upload.
+
+ -- Emmanuel Arias <eamanu@yaerobi.com>  Wed, 13 Jul 2022 16:34:57 -0300
+
+myst-parser (0.18.0-1) unstable; urgency=medium
+
+  * New upstream version.
+  * d/rules: Ignore tests files that use sphinx-pytest, it is not in Debian
+    yet. The files are:
+    - tests/test_renderers/test_fixtures_sphinx.py
+    - tests/test_renderers/test_myst_refs.py
+    - tests/test_sphinx/test_sphinx_builds.py
+    - Add this changes to autopkgtest.
+  * d/python3-myst-parser.examples: Remove .examples file, upstream not longer
+    include examples.
+
+ -- Emmanuel Arias <eamanu@yaerobi.com>  Wed, 15 Jun 2022 15:45:27 -0300
+
+myst-parser (0.17.2-1) unstable; urgency=medium
+
+  * New upstream version.
+  * d/patches: Remove patches, all of them are in the new upstream release.
+  * d/control: Bump Standards-Version to 4.6.1 (from 4.6.0.1; no further
+    changes).
+  * d/control: Use flit instead of python3-setuptools to build package.
+  * d/control: Add python3-typing-extensions as Build Depends.
+  * d/rules: Ignore tests that use pytest_param_files that is not in Debian
+    yet.
+    - d/tests/unittests: Also ignore them in autopkgtest run.
+  * d/tests/control: Write explicitly the packages that are need for run
+    autopkgtest instead of use @builddeps@.
+
+ -- Emmanuel Arias <eamanu@yaerobi.com>  Sat, 28 May 2022 10:45:26 -0300
+
+myst-parser (0.16.1-4) unstable; urgency=medium
+
+  * Team upload.
+  * Add patches to adapt for changes in Sphinx 4.4 and 4.5.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sun, 03 Apr 2022 15:09:25 +0300
+
+myst-parser (0.16.1-3) unstable; urgency=medium
+
+  * Team upload.
+  * Fix a backporting mistake in the 32-bit-test-failure patch.
+  * Correct changelog entry for -2, it was a team upload.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sat, 19 Feb 2022 19:56:21 -0400
+
+myst-parser (0.16.1-2) unstable; urgency=medium
+
+  * Team upload.
+  * Patch: Fix test failure on 32-bit platforms. (Closes: #1005691)
+  * Patch: Support pygments 2.11 in tests.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sat, 19 Feb 2022 19:36:03 -0400
+
+myst-parser (0.16.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * d/control: Build with pybuild's pyproject plugin. Add
+    pybuild-plugin-pyproject as Build Depends.
+  * d/copyright: Update debian/* files copyright year.
+  * d/tests/unittests: Ignore test that use linkify. It is not in Debian yet.
+
+ -- Emmanuel Arias <eamanu@yaerobi.com>  Tue, 11 Jan 2022 00:09:37 -0300
+
+myst-parser (0.15.2-2) unstable; urgency=medium
+
+  * source-only upload
+
+ -- Sandro Tosi <morph@debian.org>  Sun, 02 Jan 2022 12:34:26 -0500
+
+myst-parser (0.15.2-1) unstable; urgency=low
+
+  * Initial release; Closes: #993553
+
+ -- Emmanuel Arias <eamanu@yaerobi.com>  Thu, 21 Oct 2021 13:05:58 +0000

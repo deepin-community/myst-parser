@@ -1,0 +1,10 @@
+Tests: unittests
+Depends: python3-all,
+         python3-bs4,
+         python3-markdown-it,
+         python3-mdit-py-plugins,
+         python3-pytest,
+         python3-pytest-cov,
+         python3-pytest-regressions,
+         python3-sphinx,
+         @,
